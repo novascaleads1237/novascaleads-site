@@ -194,7 +194,21 @@ ul {
   box-shadow: 0 4px 24px rgba(11, 15, 26, 0.06);
 }
 
+/*
+   DESKTOP NAVBAR
+
+   Three-column grid:
+   Left   = Logo
+   Center = Navigation links
+   Right  = CTA
+
+   This keeps the navigation mathematically centered
+   regardless of the width of the logo or CTA button.
+*/
+
 .nav-inner {
+  position: relative;
+
   width: 100%;
   max-width: var(--max-w);
   height: var(--nav-h);
@@ -202,12 +216,15 @@ ul {
   margin: 0 auto;
   padding: 0 28px;
 
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+
   align-items: center;
-  gap: 38px;
+  gap: 20px;
 }
 
 .logo {
+  justify-self: start;
   flex-shrink: 0;
 
   color: var(--clr-text);
@@ -220,11 +237,15 @@ ul {
   color: var(--clr-accent);
 }
 
+/* CENTERED NAVIGATION */
+
 .nav-links {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 2px;
-  margin-right: auto;
+
+  margin: 0;
 }
 
 .nav-links a {
@@ -246,10 +267,18 @@ ul {
   background: rgba(11, 15, 26, 0.045);
 }
 
+/* RIGHT-SIDE CTA */
+
 .nav-cta {
-  margin-left: auto;
+  justify-self: end;
+
+  margin: 0;
   flex-shrink: 0;
 }
+
+/* =========================================================
+   HAMBURGER
+   ========================================================= */
 
 .hamburger {
   display: none;
@@ -840,12 +869,6 @@ ul {
   gap: 5px;
 }
 
-/* =========================================================
-   FIX:
-   Proof metrics now stay visually consistent.
-   40.3 → 4.0 will not wrap or shrink awkwardly.
-   ========================================================= */
-
 .proof-num {
   color: #fff;
 
@@ -1167,8 +1190,6 @@ ul {
     padding: 24px 18px;
   }
 
-  /* Proof cards at tablet width */
-
   .proof-card {
     padding: 26px 20px;
   }
@@ -1225,11 +1246,21 @@ ul {
     padding-right: 20px;
   }
 
-  /* NAV */
+  /* =====================================================
+     MOBILE NAV
+     ===================================================== */
 
   .nav-inner {
+    /*
+      Switch back to flex on mobile so the
+      logo stays left and hamburger stays right.
+    */
+    display: flex;
+
     height: 64px;
     padding: 0 20px;
+
+    gap: 0;
   }
 
   .nav-links,
@@ -1241,7 +1272,9 @@ ul {
     display: flex;
   }
 
-  /* HERO */
+  /* =====================================================
+     HERO
+     ===================================================== */
 
   .hero {
     display: flex;
@@ -1303,7 +1336,9 @@ ul {
     min-height: 52px;
   }
 
-  /* STATS */
+  /* =====================================================
+     STATS
+     ===================================================== */
 
   .hero-stats {
     width: 100%;
@@ -1345,7 +1380,9 @@ ul {
     margin-right: 0;
   }
 
-  /* HERO VISUAL */
+  /* =====================================================
+     HERO VISUAL
+     ===================================================== */
 
   .hero-visual {
     width: 100%;
@@ -1382,7 +1419,9 @@ ul {
     height: 1px;
   }
 
-  /* SECTIONS */
+  /* =====================================================
+     SECTIONS
+     ===================================================== */
 
   .services,
   .proof,
@@ -1443,7 +1482,9 @@ ul {
     margin-left: 20px;
   }
 
-  /* CTA */
+  /* =====================================================
+     CTA
+     ===================================================== */
 
   .cta-section {
     padding: 82px 0;
@@ -1461,7 +1502,9 @@ ul {
     width: 100%;
   }
 
-  /* FOOTER */
+  /* =====================================================
+     FOOTER
+     ===================================================== */
 
   .footer-inner {
     flex-direction: column;
