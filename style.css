@@ -840,14 +840,22 @@ ul {
   gap: 5px;
 }
 
+/* =========================================================
+   FIX:
+   Proof metrics now stay visually consistent.
+   40.3 → 4.0 will not wrap or shrink awkwardly.
+   ========================================================= */
+
 .proof-num {
   color: #fff;
 
-  font-size: 1.65rem;
+  font-size: 1.55rem;
   font-weight: 800;
 
   letter-spacing: -0.045em;
   line-height: 1;
+
+  white-space: nowrap;
 }
 
 .proof-card--featured .proof-num {
@@ -1104,17 +1112,12 @@ ul {
 
 /* =========================================================
    TABLET / SMALL DESKTOP
-   900px AND ABOVE = HERO STAYS SIDE-BY-SIDE
+   900px AND ABOVE = HERO SIDE-BY-SIDE
    ========================================================= */
 
 @media (min-width: 900px) and (max-width: 1024px) {
 
   .hero {
-    /*
-      Keep text + visual in two columns
-      even around 900px–1024px.
-    */
-
     grid-template-columns:
       minmax(0, 1fr)
       minmax(360px, 0.9fr);
@@ -1163,10 +1166,23 @@ ul {
   .vis-card {
     padding: 24px 18px;
   }
+
+  /* Proof cards at tablet width */
+
+  .proof-card {
+    padding: 26px 20px;
+  }
+
+  .proof-metric-row {
+    gap: 12px;
+  }
+
+  .proof-num {
+    font-size: 1.38rem;
+  }
 }
 
 /* =========================================================
-   TABLET / MOBILE
    BELOW 900px = HERO STACKS
    ========================================================= */
 
@@ -1398,6 +1414,14 @@ ul {
     padding: 27px 22px;
   }
 
+  .proof-metric-row {
+    gap: 20px;
+  }
+
+  .proof-num {
+    font-size: 1.55rem;
+  }
+
   .process-step {
     grid-template-columns: 42px minmax(0, 1fr);
 
@@ -1508,6 +1532,10 @@ ul {
   .proof-metric-row {
     flex-direction: column;
     gap: 15px;
+  }
+
+  .proof-num {
+    font-size: 1.55rem;
   }
 
   .footer-links {
