@@ -1,1045 +1,656 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  />
+  <title>NovaScaleads — Seller Leads for Real Estate Brokers</title>
+  <meta name="description" content="NovaScaleads is a growth partner for real estate brokerages targeting distressed sellers.">
 
-  <meta
-    name="description"
-    content="NovaScaleads helps B2B SaaS companies grow through AI Search, SEO, and Paid Acquisition."
-  />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <title>NovaScaleads — Growth Partner for B2B SaaS</title>
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png">
-
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin
-  />
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  />
-
-  <!-- Main CSS -->
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <!-- =====================================================
-       NAVBAR
-       ===================================================== -->
+<!-- Ambient background -->
+<div class="ambient ambient-one"></div>
+<div class="ambient ambient-two"></div>
+<div class="grid-bg"></div>
 
-  <nav
-    class="navbar"
-    id="navbar"
-    aria-label="Main navigation"
-  >
+<!-- ================= NAV ================= -->
 
-    <div class="nav-inner">
+<header class="nav" id="nav">
+  <div class="nav-inner">
 
-      <!-- Logo -->
-      <a
-        href="#"
-        class="logo"
-        aria-label="NovaScaleads home"
-      >
-        Nova<span>Scale</span>ads
-      </a>
+    <a href="#top" class="logo">
+      Nova<span>Scale</span>ads
+    </a>
 
+    <nav class="nav-links" id="navLinks">
+      <a href="#what">What We Do</a>
+      <a href="#proof">The Proof</a>
+      <a href="#work">How We Work</a>
+    </nav>
 
-      <!-- Desktop Navigation -->
-      <ul class="nav-links">
+    <a href="#contact" class="btn btn-primary nav-cta">
+      Book a Growth Audit
+    </a>
 
-        <li>
-          <a href="#services">
-            What We Do
-          </a>
-        </li>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
 
-        <li>
-          <a href="#proof">
-            The Proof
-          </a>
-        </li>
+  </div>
+</header>
 
-        <li>
-          <a href="#process">
-            How We Work
-          </a>
-        </li>
 
-      </ul>
+<!-- ================= HERO ================= -->
 
+<section class="hero" id="top">
 
-      <!-- Desktop CTA -->
-      <a
-        href="mailto:hello@novascaleads.com?subject=Growth%20Audit%20Request"
-        class="btn btn-primary nav-cta"
-      >
-        Book a Growth Audit
-      </a>
+  <div class="hero-inner">
 
+    <div class="hero-copy reveal">
 
-      <!-- Mobile Menu Button -->
-      <button
-        class="hamburger"
-        id="hamburger"
-        type="button"
-        aria-label="Toggle navigation menu"
-        aria-expanded="false"
-        aria-controls="mobileMenu"
-      >
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      <span class="badge">
+        <span class="badge-dot"></span>
+        Real Estate Growth Partner
+      </span>
 
-    </div>
+      <h1>
+        Growth partner for
+        <span class="gradient-text">distressed-seller</span>
+        real estate.
+      </h1>
 
-
-    <!-- Mobile Navigation -->
-    <div
-      class="mobile-menu"
-      id="mobileMenu"
-    >
-
-      <a href="#services">
-        What We Do
-      </a>
-
-      <a href="#proof">
-        The Proof
-      </a>
-
-      <a href="#process">
-        How We Work
-      </a>
-
-      <a
-        href="mailto:hello@novascaleads.com?subject=Growth%20Audit%20Request"
-        class="btn btn-primary"
-      >
-        Book a Growth Audit
-      </a>
-
-    </div>
-
-  </nav>
-
-
-
-  <!-- =====================================================
-       HERO
-       ===================================================== -->
-
-  <main>
-
-    <section
-      class="hero"
-      id="home"
-    >
-
-      <!-- Hero Copy -->
-      <div class="hero-copy">
-
-        <div class="hero-badge">
-          B2B Growth Partner
-        </div>
-
-
-        <h1 class="hero-headline">
-          Growth Partner
-          <br />
-          for B2B SaaS.
-        </h1>
-
-
-        <p class="hero-sub">
-          We help B2B SaaS companies stop leaking pipeline
-          to competitors by dominating AI Search —
-          ChatGPT, Perplexity — and Paid Acquisition.
-        </p>
-
-
-        <!-- Hero Buttons -->
-        <div class="hero-actions">
-
-          <a
-            href="mailto:hello@novascaleads.com?subject=Free%20Growth%20Audit%20Request"
-            class="btn btn-primary btn-lg"
-          >
-            Book a Free Growth Audit
-          </a>
-
-          <a
-            href="#proof"
-            class="btn btn-ghost btn-lg"
-          >
-            See Our Proof
-          </a>
-
-        </div>
-
-
-        <!-- Hero Stats -->
-        <div class="hero-stats">
-
-          <div class="stat">
-
-            <span class="stat-num">
-              4,151%
-            </span>
-
-            <span class="stat-label">
-              Organic traffic growth
-            </span>
-
-          </div>
-
-
-          <div
-            class="stat-divider"
-            aria-hidden="true"
-          ></div>
-
-
-          <div class="stat">
-
-            <span class="stat-num">
-              4–5×
-            </span>
-
-            <span class="stat-label">
-              Qualified lead multiplier
-            </span>
-
-          </div>
-
-
-          <div
-            class="stat-divider"
-            aria-hidden="true"
-          ></div>
-
-
-          <div class="stat">
-
-            <span class="stat-num">
-              6 mo.
-            </span>
-
-            <span class="stat-label">
-              To Page 1 rankings
-            </span>
-
-          </div>
-
-        </div>
-
-      </div>
-
-
-
-      <!-- =================================================
-           HERO VISUAL
-           ================================================= -->
-
-      <div
-        class="hero-visual"
-        aria-hidden="true"
-      >
-
-        <!-- Old Buyer Journey -->
-        <div class="vis-card vis-card--left">
-
-          <div class="vis-label">
-            Old Buyer Journey
-          </div>
-
-          <div class="vis-path">
-
-            <div class="vis-step step-muted">
-              Google Search
-            </div>
-
-            <div class="vis-arrow">
-              ↓
-            </div>
-
-            <div class="vis-step step-muted">
-              10 Blue Links
-            </div>
-
-            <div class="vis-arrow">
-              ↓
-            </div>
-
-            <div class="vis-step step-muted">
-              Your Website
-            </div>
-
-          </div>
-
-        </div>
-
-
-        <!-- Divider -->
-        <div
-          class="vis-split-line"
-          aria-hidden="true"
-        ></div>
-
-
-        <!-- New Buyer Journey -->
-        <div class="vis-card vis-card--right">
-
-          <div class="vis-label">
-            New Buyer Journey
-          </div>
-
-          <div class="vis-path">
-
-            <div class="vis-step step-ai">
-              ChatGPT / Perplexity
-            </div>
-
-            <div class="vis-arrow">
-              ↓
-            </div>
-
-            <div class="vis-step step-ai">
-              AI cites your brand
-            </div>
-
-            <div class="vis-arrow">
-              ↓
-            </div>
-
-            <div class="vis-step step-active">
-              Pipeline ✓
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =====================================================
-         SERVICES
-         ===================================================== -->
-
-    <section
-      class="services"
-      id="services"
-    >
-
-      <div class="container">
-
-        <div class="section-header reveal">
-
-          <h2 class="section-title">
-            The search just
-            <br />
-            split in two.
-          </h2>
-
-          <p class="section-desc">
-            Buyers used to start on Google. Now they start
-            in ChatGPT or Perplexity. If your brand isn't
-            surfaced there, you're invisible — no matter
-            how strong your Google rankings are.
-          </p>
-
-        </div>
-
-
-        <!-- Services Grid -->
-        <div class="services-grid">
-
-
-          <!-- Service 1 -->
-          <article class="service-card reveal">
-
-            <div class="service-icon">
-
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                aria-hidden="true"
-              >
-                <circle
-                  cx="11"
-                  cy="11"
-                  r="8"
-                />
-
-                <path
-                  d="m21 21-4.35-4.35"
-                />
-
-                <path
-                  d="M11 8v6M8 11h6"
-                />
-              </svg>
-
-            </div>
-
-
-            <div class="service-tag">
-              AI Search
-            </div>
-
-
-            <h3>
-              AI Search Optimization
-              <span class="service-abbr">
-                AEO &amp; GEO
-              </span>
-            </h3>
-
-
-            <p>
-              We get you cited inside ChatGPT, Gemini,
-              Perplexity, and AI Overviews. Where modern
-              buyers research, your brand answers.
-            </p>
-
-
-            <div class="service-footer">
-
-              <span class="service-channel">
-                ChatGPT
-              </span>
-
-              <span class="service-channel">
-                Perplexity
-              </span>
-
-              <span class="service-channel">
-                Gemini
-              </span>
-
-            </div>
-
-          </article>
-
-
-
-          <!-- Service 2 -->
-          <article class="service-card reveal">
-
-            <div class="service-icon">
-
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                aria-hidden="true"
-              >
-
-                <path d="M3 3v18h18" />
-
-                <path
-                  d="m19 9-5 5-4-4-3 3"
-                />
-
-              </svg>
-
-            </div>
-
-
-            <div class="service-tag">
-              SEO
-            </div>
-
-
-            <h3>
-              Technical &amp; Content SEO
-            </h3>
-
-
-            <p>
-              Top rankings on traditional Google search
-              by building a clean technical foundation and
-              real topical authority that compounds over time.
-            </p>
-
-
-            <div class="service-footer">
-
-              <span class="service-channel">
-                On-Page
-              </span>
-
-              <span class="service-channel">
-                Technical
-              </span>
-
-              <span class="service-channel">
-                Authority
-              </span>
-
-            </div>
-
-          </article>
-
-
-
-          <!-- Service 3 -->
-          <article class="service-card reveal">
-
-            <div class="service-icon">
-
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                aria-hidden="true"
-              >
-
-                <rect
-                  width="20"
-                  height="14"
-                  x="2"
-                  y="5"
-                  rx="2"
-                />
-
-                <path d="M2 10h20" />
-
-              </svg>
-
-            </div>
-
-
-            <div class="service-tag">
-              Paid
-            </div>
-
-
-            <h3>
-              Full-Funnel Paid Marketing
-            </h3>
-
-
-            <p>
-              Meta, Google Search, and Performance Max
-              campaigns optimized for tracked sales,
-              not vanity metrics. Every dollar tied to pipeline.
-            </p>
-
-
-            <div class="service-footer">
-
-              <span class="service-channel">
-                Meta
-              </span>
-
-              <span class="service-channel">
-                Google
-              </span>
-
-              <span class="service-channel">
-                PMax
-              </span>
-
-            </div>
-
-          </article>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =====================================================
-         PROOF
-         ===================================================== -->
-
-    <section
-      class="proof"
-      id="proof"
-    >
-
-      <div class="container">
-
-        <div class="section-header reveal">
-
-          <h2 class="section-title">
-            We move
-            <br />
-            real numbers.
-          </h2>
-
-          <p class="section-desc">
-            Not projections. Not estimates. Verified results
-            from B2B companies that had the same problems
-            yours does.
-          </p>
-
-        </div>
-
-
-        <div class="proof-grid">
-
-
-          <!-- Proof 1 -->
-          <article class="proof-card reveal">
-
-            <div class="proof-industry">
-              B2B HealthTech
-            </div>
-
-
-            <div class="proof-metric-row">
-
-              <div class="proof-metric">
-
-                <span class="proof-num">
-                  +4,151%
-                </span>
-
-                <span class="proof-metric-label">
-                  Organic traffic
-                </span>
-
-              </div>
-
-
-              <div class="proof-metric">
-
-                <span class="proof-num">
-                  40.3 → 4.0
-                </span>
-
-                <span class="proof-metric-label">
-                  Avg. search position
-                </span>
-
-              </div>
-
-            </div>
-
-
-            <p class="proof-desc">
-              Dominated competitive search terms in a
-              heavily regulated niche where most competitors
-              rely on paid alone.
-            </p>
-
-
-            <div class="proof-badge">
-              SEO + Content
-            </div>
-
-          </article>
-
-
-
-          <!-- Proof 2 -->
-          <article
-            class="proof-card proof-card--featured reveal"
-          >
-
-            <div class="proof-industry">
-              B2B Software &amp; Services
-            </div>
-
-
-            <div class="proof-metric-row">
-
-              <div class="proof-metric">
-
-                <span class="proof-num">
-                  +176%
-                </span>
-
-                <span class="proof-metric-label">
-                  Organic traffic growth
-                </span>
-
-              </div>
-
-
-              <div class="proof-metric">
-
-                <span class="proof-num">
-                  4–5×
-                </span>
-
-                <span class="proof-metric-label">
-                  Qualified lead volume
-                </span>
-
-              </div>
-
-            </div>
-
-
-            <p class="proof-desc">
-              Rebuilt their content architecture around
-              buyer intent and watched inbound volume
-              multiply — without increasing ad spend.
-            </p>
-
-
-            <div class="proof-badge">
-              Full-Funnel
-            </div>
-
-          </article>
-
-
-
-          <!-- Proof 3 -->
-          <article class="proof-card reveal">
-
-            <div class="proof-industry">
-              B2B Consulting
-            </div>
-
-
-            <div class="proof-metric-row">
-
-              <div class="proof-metric">
-
-                <span class="proof-num">
-                  6 mo.
-                </span>
-
-                <span class="proof-metric-label">
-                  To Page 1 rankings
-                </span>
-
-              </div>
-
-
-              <div class="proof-metric">
-
-                <span class="proof-num">
-                  0 → 23
-                </span>
-
-                <span class="proof-metric-label">
-                  AI visibility score
-                </span>
-
-              </div>
-
-            </div>
-
-
-            <p class="proof-desc">
-              First agency to appear in AI-generated
-              recommendations in their sector — six months
-              after a zero baseline.
-            </p>
-
-
-            <div class="proof-badge">
-              AEO + GEO
-            </div>
-
-          </article>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =====================================================
-         PROCESS
-         ===================================================== -->
-
-    <section
-      class="process"
-      id="process"
-    >
-
-      <div class="container">
-
-        <div class="section-header reveal">
-
-          <h2 class="section-title">
-            How we start
-            <br />
-            working together.
-          </h2>
-
-          <p class="section-desc">
-            Four steps. No fluff. You'll know exactly what's
-            happening and why before we execute anything.
-          </p>
-
-        </div>
-
-
-        <div class="process-track">
-
-
-          <!-- Step 1 -->
-          <div class="process-step reveal">
-
-            <div class="process-num">
-              1
-            </div>
-
-            <div class="process-content">
-
-              <h3>
-                Free SEO + AI Audit
-              </h3>
-
-              <p>
-                Discover where you rank, where you're
-                invisible in AI, and the highest-leverage
-                opportunities. No cost, no commitment —
-                just clarity.
-              </p>
-
-            </div>
-
-          </div>
-
-
-          <div
-            class="process-connector"
-            aria-hidden="true"
-          ></div>
-
-
-          <!-- Step 2 -->
-          <div class="process-step reveal">
-
-            <div class="process-num">
-              2
-            </div>
-
-            <div class="process-content">
-
-              <h3>
-                Custom Roadmap
-              </h3>
-
-              <p>
-                The right playbooks and priorities built
-                around your goals — not a generic template
-                handed to every client.
-              </p>
-
-            </div>
-
-          </div>
-
-
-          <div
-            class="process-connector"
-            aria-hidden="true"
-          ></div>
-
-
-          <!-- Step 3 -->
-          <div class="process-step reveal">
-
-            <div class="process-num">
-              3
-            </div>
-
-            <div class="process-content">
-
-              <h3>
-                Launch &amp; Execute
-              </h3>
-
-              <p>
-                Execution at speed across organic and paid
-                channels. We move fast and keep you informed
-                at every milestone.
-              </p>
-
-            </div>
-
-          </div>
-
-
-          <div
-            class="process-connector"
-            aria-hidden="true"
-          ></div>
-
-
-          <!-- Step 4 -->
-          <div class="process-step reveal">
-
-            <div class="process-num">
-              4
-            </div>
-
-            <div class="process-content">
-
-              <h3>
-                Track &amp; Scale
-              </h3>
-
-              <p>
-                AI visibility, organic reach, inbound leads,
-                and cost-per-lead tracked monthly. You always
-                know what's working.
-              </p>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =====================================================
-         FINAL CTA
-         ===================================================== -->
-
-    <section
-      class="cta-section"
-      id="cta"
-    >
-
-      <div class="container">
-
-        <div class="cta-inner reveal">
-
-          <p class="cta-eyebrow">
-            Ready when you are
-          </p>
-
-
-          <h2 class="cta-headline">
-            Let's turn attention
-            <br />
-            into growth.
-          </h2>
-
-
-          <p class="cta-sub">
-            No long lock-ins. Start with a free audit and
-            see the exact plan before you commit to anything.
-          </p>
-
-
-          <a
-            href="mailto:hello@novascaleads.com?subject=Growth%20Audit%20Request"
-            class="btn btn-primary btn-lg btn-cta"
-          >
-            Book a Growth Audit
-          </a>
-
-
-          <p class="cta-note">
-            Free. No sales pressure. Results in 48 hours.
-          </p>
-
-        </div>
-
-      </div>
-
-    </section>
-
-  </main>
-
-
-
-  <!-- =====================================================
-       FOOTER
-       ===================================================== -->
-
-  <footer class="footer">
-
-    <div class="container footer-inner">
-
-      <a
-        href="#"
-        class="logo"
-        aria-label="NovaScaleads home"
-      >
-        Nova<span>Scale</span>ads
-      </a>
-
-
-      <p class="footer-copy">
-        © 2025 NovaScaleads. All rights reserved.
+      <p class="hero-sub">
+        We help brokerages stop paying for cold, generic lead lists by targeting foreclosure,
+        divorce, and inheritance sellers directly — with geo-precise ads, native-language
+        creative, and CRM automation built for speed-to-lead.
       </p>
 
-
-      <div class="footer-links">
-
-        <a href="#">
-          Privacy
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-primary magnetic">
+          Book a Free Growth Audit
+          <span class="btn-arrow">↗</span>
         </a>
 
-        <a href="#">
-          Terms
+        <a href="#proof" class="btn btn-ghost">
+          See Our Proof
         </a>
+      </div>
 
-        <a href="mailto:hello@novascaleads.com">
-          Contact
-        </a>
+      <div class="hero-stats">
+
+        <div class="hero-stat">
+          <p class="hero-stat-num">4x</p>
+          <p class="hero-stat-label">Lead volume growth</p>
+        </div>
+
+        <div class="hero-stat">
+          <p class="hero-stat-num">$30.96</p>
+          <p class="hero-stat-label">Blended cost per lead</p>
+        </div>
+
+        <div class="hero-stat">
+          <p class="hero-stat-num">8 mo.</p>
+          <p class="hero-stat-label">Live Texas campaign</p>
+        </div>
 
       </div>
 
     </div>
 
-  </footer>
+
+    <!-- PREMIUM 3D VISUAL -->
+
+    <div class="hero-visual reveal">
+
+      <div class="orb orb-main"></div>
+      <div class="orb orb-small"></div>
+
+      <div class="visual-ring ring-one"></div>
+      <div class="visual-ring ring-two"></div>
+
+      <div class="dashboard-card tilt-card">
+
+        <div class="dashboard-top">
+          <div>
+            <span class="mini-label">CAMPAIGN OVERVIEW</span>
+            <h3>Seller Pipeline</h3>
+          </div>
+
+          <span class="live-dot">
+            <i></i> Live
+          </span>
+        </div>
+
+        <div class="chart">
+
+          <div class="chart-grid"></div>
+
+          <svg viewBox="0 0 500 190" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="chartGradient" x1="0" x2="1">
+                <stop offset="0%" stop-color="#3457FF"/>
+                <stop offset="100%" stop-color="#7B8DFF"/>
+              </linearGradient>
+
+              <linearGradient id="areaGradient" x1="0" x2="0" y1="0" y2="1">
+                <stop offset="0%" stop-color="#3457FF" stop-opacity=".30"/>
+                <stop offset="100%" stop-color="#3457FF" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+
+            <path
+              class="chart-area"
+              d="M0 160 C50 150 65 125 100 135 C140 148 150 100 190 115 C225 130 245 78 285 95 C320 110 340 65 375 78 C415 92 430 35 500 25 L500 190 L0 190 Z"
+            />
+
+            <path
+              class="chart-line"
+              d="M0 160 C50 150 65 125 100 135 C140 148 150 100 190 115 C225 130 245 78 285 95 C320 110 340 65 375 78 C415 92 430 35 500 25"
+            />
+
+            <circle cx="500" cy="25" r="6" class="chart-point"/>
+          </svg>
+
+        </div>
+
+        <div class="dashboard-metrics">
+
+          <div>
+            <span>Leads</span>
+            <strong>398</strong>
+          </div>
+
+          <div>
+            <span>CPL</span>
+            <strong>$30.96</strong>
+          </div>
+
+          <div>
+            <span>Growth</span>
+            <strong class="green">+4x</strong>
+          </div>
+
+        </div>
+
+      </div>
 
 
+      <div class="floating-card floating-card-one">
+        <span class="floating-icon">↗</span>
+        <div>
+          <small>Lead volume</small>
+          <strong>+400%</strong>
+        </div>
+      </div>
 
-  <!-- =====================================================
-       JAVASCRIPT
-       ===================================================== -->
+      <div class="floating-card floating-card-two">
+        <span class="floating-icon blue-icon">✓</span>
+        <div>
+          <small>Pipeline status</small>
+          <strong>Healthy</strong>
+        </div>
+      </div>
 
-  <script src="script.js"></script>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ================= WHAT WE DO ================= -->
+
+<section class="what section-light" id="what">
+
+  <div class="section-inner">
+
+    <div class="section-heading reveal">
+
+      <span class="eyebrow">THE SYSTEM</span>
+
+      <h2>
+        Distressed sellers don't shop like typical homeowners.
+      </h2>
+
+      <p class="section-lead">
+        They're reacting to a foreclosure notice, a probate letter, or a divorce filing —
+        not browsing listings for fun. Generic postcards and cold PPC campaigns don't reach
+        someone in that moment.
+      </p>
+
+    </div>
+
+
+    <div class="card-grid">
+
+      <article class="feature-card tilt-card reveal">
+
+        <div class="feature-number">01</div>
+
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <circle cx="12" cy="12" r="9"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="12" cy="12" r=".6" fill="currentColor"/>
+          </svg>
+        </div>
+
+        <p class="feature-tag">Targeting</p>
+
+        <h3>CRM &amp; Geo-Targeting</h3>
+
+        <p>
+          We build CRM-informed custom audiences and layer them with geo-targeting aimed at
+          distressed-property zones — foreclosure filings, probate records, divorce activity.
+        </p>
+
+        <div class="chip-row">
+          <span class="tag-chip">Foreclosure</span>
+          <span class="tag-chip">Probate</span>
+          <span class="tag-chip">Divorce</span>
+        </div>
+
+      </article>
+
+
+      <article class="feature-card tilt-card reveal">
+
+        <div class="feature-number">02</div>
+
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M4 5h13v10H9l-4 4V5z"/>
+            <circle cx="8" cy="10" r=".6" fill="currentColor"/>
+            <circle cx="12" cy="10" r=".6" fill="currentColor"/>
+            <circle cx="16" cy="10" r=".6" fill="currentColor"/>
+          </svg>
+        </div>
+
+        <p class="feature-tag">Creative</p>
+
+        <h3>Native-Language Creative</h3>
+
+        <p>
+          Spanish UGC-style video and empathetic, testimonial-style copy written for the
+          seller's actual situation — not a generic "we buy houses" script.
+        </p>
+
+        <div class="chip-row">
+          <span class="tag-chip">Spanish</span>
+          <span class="tag-chip">UGC</span>
+          <span class="tag-chip">Testimonials</span>
+        </div>
+
+      </article>
+
+
+      <article class="feature-card tilt-card reveal">
+
+        <div class="feature-number">03</div>
+
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M13 3 5 13h5l-1 8 8-10h-5l1-8z" stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+        <p class="feature-tag">Automation</p>
+
+        <h3>CRM-Synced Follow-Up</h3>
+
+        <p>
+          Campaign Budget Optimization stabilizes cost, weekly A/B tests sharpen performance,
+          and automated SMS/WhatsApp follow-up gets a reply out in minutes.
+        </p>
+
+        <div class="chip-row">
+          <span class="tag-chip">CBO</span>
+          <span class="tag-chip">SMS</span>
+          <span class="tag-chip">WhatsApp</span>
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ================= PROOF ================= -->
+
+<section class="proof" id="proof">
+
+  <div class="proof-glow"></div>
+
+  <div class="section-inner">
+
+    <div class="section-heading reveal">
+
+      <p class="kicker">Texas Campaign — 8 months</p>
+
+      <h2>We move real numbers.</h2>
+
+      <p class="section-lead light">
+        Not projections. Not estimates. Verified results from one 8-month Meta Ads campaign
+        across four Texas markets — DFW-Houston, Austin, San Antonio, and smaller cities.
+      </p>
+
+    </div>
+
+
+    <div class="proof-grid">
+
+      <div class="proof-card tilt-card reveal">
+
+        <p class="proof-label">Overall Campaign</p>
+
+        <div class="proof-stats">
+
+          <div>
+            <p class="proof-num" data-target="398">0</p>
+            <p class="proof-stat-label">Seller leads generated</p>
+          </div>
+
+          <div>
+            <p class="proof-num" data-target="30.96" data-prefix="$" data-decimals="2">
+              $0.00
+            </p>
+            <p class="proof-stat-label">Blended cost per lead</p>
+          </div>
+
+        </div>
+
+        <p class="proof-desc">
+          Distressed sellers across foreclosure, divorce, and inheritance situations,
+          acquired over 8 months on Meta.
+        </p>
+
+        <span class="tag-chip dark-chip">Meta Ads</span>
+
+      </div>
+
+
+      <div class="proof-card proof-card-highlight tilt-card reveal">
+
+        <div class="shine"></div>
+
+        <p class="proof-label">Spanish-Language Track</p>
+
+        <div class="proof-stats">
+
+          <div>
+            <p class="proof-num" data-target="54" data-suffix="%">0%</p>
+            <p class="proof-stat-label">Of all leads</p>
+          </div>
+
+          <div>
+            <p class="proof-num" data-target="16.22" data-prefix="$" data-decimals="2">
+              $0.00
+            </p>
+            <p class="proof-stat-label">Cost per lead</p>
+          </div>
+
+        </div>
+
+        <p class="proof-desc">
+          One native-Spanish creative track delivered over half of all leads on just 29%
+          of total budget — the standout performer of the campaign.
+        </p>
+
+        <span class="tag-chip tag-chip-light">Native Creative</span>
+
+      </div>
+
+
+      <div class="proof-card tilt-card reveal">
+
+        <p class="proof-label">Growth &amp; Peak</p>
+
+        <div class="proof-stats">
+
+          <div>
+            <p class="proof-num" data-target="4" data-suffix="x">0x</p>
+            <p class="proof-stat-label">Lead volume growth</p>
+          </div>
+
+          <div>
+            <p class="proof-num" data-target="90">0</p>
+            <p class="proof-stat-label">Leads, best month</p>
+          </div>
+
+        </div>
+
+        <p class="proof-desc">
+          Volume scaled steadily rather than plateauing, with CBO and weekly A/B testing
+          stabilizing costs along the way.
+        </p>
+
+        <span class="tag-chip dark-chip">CBO + Testing</span>
+
+      </div>
+
+    </div>
+
+    <p class="proof-disclaimer">
+      Results reflect one 8-month campaign across specific Texas markets.
+      Individual results vary by market, budget, and season.
+    </p>
+
+  </div>
+</section>
+
+
+<!-- ================= HOW WE WORK ================= -->
+
+<section class="work" id="work">
+
+  <div class="section-inner">
+
+    <div class="section-heading reveal">
+
+      <span class="eyebrow">THE PROCESS</span>
+
+      <h2>How we start working together.</h2>
+
+      <p class="section-lead">
+        Four steps. No fluff. You'll know exactly what's happening and why before we execute anything.
+      </p>
+
+    </div>
+
+
+    <div class="steps">
+
+      <div class="step reveal">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <h3>Free Seller-Lead Audit</h3>
+          <p>
+            We review your current markets, lead sources, and CRM setup to find where
+            you're leaking pipeline.
+          </p>
+        </div>
+      </div>
+
+      <div class="step-line"></div>
+
+      <div class="step reveal">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <h3>Custom Targeting Roadmap</h3>
+          <p>
+            Geo-targeting zones, language tracks, and creative direction built around
+            your specific markets.
+          </p>
+        </div>
+      </div>
+
+      <div class="step-line"></div>
+
+      <div class="step reveal">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <h3>Launch &amp; Execute</h3>
+          <p>
+            Campaigns go live across Meta, with native-language creative and
+            CRM-synced automation running from day one.
+          </p>
+        </div>
+      </div>
+
+      <div class="step-line"></div>
+
+      <div class="step reveal">
+        <div class="step-num">4</div>
+        <div class="step-body">
+          <h3>Track &amp; Scale</h3>
+          <p>
+            Cost per lead, volume, and conversion tracked weekly. You always know
+            what's working and where to double down.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ================= CTA ================= -->
+
+<section class="cta" id="contact">
+
+  <div class="cta-glow"></div>
+
+  <div class="section-inner cta-inner reveal">
+
+    <p class="kicker">Ready when you are</p>
+
+    <h2>
+      Let's turn distressed sellers into signed listings.
+    </h2>
+
+    <p class="section-lead">
+      No long lock-ins. Start with a free audit and see the exact targeting plan
+      before you commit to anything.
+    </p>
+
+
+    <form class="lead-form" id="leadForm" novalidate>
+
+      <div class="form-row">
+
+        <label for="name">Full name</label>
+
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="John Smith"
+          required
+        >
+
+      </div>
+
+
+      <div class="form-row form-row-half">
+
+        <div>
+          <label for="brokerage">Brokerage</label>
+
+          <input
+            type="text"
+            id="brokerage"
+            name="brokerage"
+            placeholder="Your brokerage"
+            required
+          >
+        </div>
+
+        <div>
+          <label for="email">Email</label>
+
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="you@example.com"
+            required
+          >
+        </div>
+
+      </div>
+
+
+      <div class="form-row">
+
+        <label for="market">Markets you serve</label>
+
+        <input
+          type="text"
+          id="market"
+          name="market"
+          placeholder="e.g. Dallas–Fort Worth, Austin"
+        >
+
+      </div>
+
+
+      <button type="submit" class="btn btn-primary btn-full magnetic">
+        Book a Growth Audit
+        <span class="btn-arrow">↗</span>
+      </button>
+
+      <p class="form-note" id="formNote" role="status"></p>
+
+    </form>
+
+    <p class="cta-footnote">
+      Free. No sales pressure. Plan back in 48 hours.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+  <div class="section-inner footer-inner">
+
+    <a href="#top" class="logo">
+      Nova<span>Scale</span>ads
+    </a>
+
+    <p class="footer-copy">
+      © <span id="year"></span> NovaScaleads. All rights reserved.
+    </p>
+
+    <nav class="footer-links">
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+  </div>
+
+</footer>
+
+
+<script src="script.js"></script>
 
 </body>
 </html>
