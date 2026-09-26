@@ -1,235 +1,190 @@
-/* =========================================================
-   NovaScaleads — script.js
-   ========================================================= */
+// ==========================================================
+// NOVASCALEADS — PREMIUM INTERACTIONS
+// ==========================================================
 
-(function () {
-  "use strict";
+document.addEventListener("DOMContentLoaded", () => {
 
-  /* =======================================================
-     ELEMENTS
-     ======================================================= */
+  /* ========================================================
+     YEAR
+     ======================================================== */
 
-  const navbar = document.getElementById("navbar");
-  const hamburger = document.getElementById("hamburger");
-  const mobileMenu = document.getElementById("mobileMenu");
+  const year = document.getElementById("year");
 
-
-  /* =======================================================
-     STICKY NAVBAR
-     ======================================================= */
-
-  function updateNavbar() {
-    if (!navbar) return;
-
-    if (window.scrollY > 12) {
-      navbar.classList.add("scrolled");
-    } else {
-      navbar.classList.remove("scrolled");
-    }
-  }
-
-  window.addEventListener(
-    "scroll",
-    updateNavbar,
-    { passive: true }
-  );
-
-  updateNavbar();
-
-
-  /* =======================================================
-     MOBILE MENU
-     ======================================================= */
-
-  function closeMobileMenu() {
-    if (!mobileMenu || !hamburger) return;
-
-    mobileMenu.classList.remove("open");
-    hamburger.setAttribute("aria-expanded", "false");
-  }
-
-  function toggleMobileMenu(event) {
-    event.stopPropagation();
-
-    if (!mobileMenu || !hamburger) return;
-
-    const isOpen = mobileMenu.classList.toggle("open");
-
-    hamburger.setAttribute(
-      "aria-expanded",
-      String(isOpen)
-    );
-  }
-
-  if (hamburger) {
-    hamburger.addEventListener(
-      "click",
-      toggleMobileMenu
-    );
+  if (year) {
+    year.textContent = new Date().getFullYear();
   }
 
 
-  /* =======================================================
-     CLOSE MOBILE MENU ON OUTSIDE CLICK
-     ======================================================= */
+  /* ========================================================
+     REDUCED MOTION
+     ======================================================== */
 
-  document.addEventListener("click", function (event) {
-
-    if (!navbar || !mobileMenu) return;
-
-    if (!navbar.contains(event.target)) {
-      closeMobileMenu();
-    }
-
-  });
+  const prefersReducedMotion =
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 
-  /* =======================================================
-     SMOOTH ANCHOR SCROLL
-     ======================================================= */
+  /* ========================================================
+     MOBILE NAV
+     ======================================================== */
 
-  document
-    .querySelectorAll('a[href^="#"]')
-    .forEach(function (anchor) {
+  const navToggle = document.getElementById("navToggle");
+  const navLinks = document.getElementById("navLinks");
 
-      anchor.addEventListener(
-        "click",
-        function (event) {
+  if (navToggle && navLinks) {
 
-          const targetId =
-            this.getAttribute("href");
+    navToggle.addEventListener("click", () => {
 
-          if (
-            !targetId ||
-            targetId === "#"
-          ) {
-            return;
-          }
+      const isOpen = navLinks.classList.toggle("open");
 
-          const target =
-            document.querySelector(targetId);
-
-          if (!target) return;
-
-          event.preventDefault();
-
-          const navHeight =
-            navbar ? navbar.offsetHeight : 0;
-
-          const targetTop =
-            target.getBoundingClientRect().top +
-            window.scrollY -
-            navHeight -
-            14;
-
-          window.scrollTo({
-            top: Math.max(targetTop, 0),
-            behavior: "smooth"
-          });
-
-          closeMobileMenu();
-
-        }
+      navToggle.setAttribute(
+        "aria-expanded",
+        String(isOpen)
       );
 
     });
 
 
-  /* =======================================================
-     SCROLL REVEAL
-     ======================================================= */
+    navLinks.querySelectorAll("a").forEach(link => {
 
-  const prefersReducedMotion =
-    window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    ).matches;
+      link.addEventListener("click", () => {
 
+        navLinks.classList.remove("open");
 
-  if (prefersReducedMotion) {
-
-    document
-      .querySelectorAll(".reveal")
-      .forEach(function (element) {
-        element.classList.add("visible");
-      });
-
-  } else {
-
-    const revealElements =
-      document.querySelectorAll(".reveal");
-
-    if ("IntersectionObserver" in window) {
-
-      const revealObserver =
-        new IntersectionObserver(
-          function (entries) {
-
-            entries.forEach(function (entry) {
-
-              if (entry.isIntersecting) {
-
-                entry.target.classList.add(
-                  "visible"
-                );
-
-                revealObserver.unobserve(
-                  entry.target
-                );
-
-              }
-
-            });
-
-          },
-          {
-            threshold: 0.12,
-            rootMargin:
-              "0px 0px -40px 0px"
-          }
+        navToggle.setAttribute(
+          "aria-expanded",
+          "false"
         );
 
-
-      revealElements.forEach(function (element) {
-        revealObserver.observe(element);
       });
 
-    } else {
-
-      revealElements.forEach(function (element) {
-        element.classList.add("visible");
-      });
-
-    }
+    });
 
   }
 
 
-  /* =======================================================
-     COUNT UP
-     ======================================================= */
+  /* ========================================================
+     NAV SCROLL EFFECT
+     ======================================================== */
 
-  function animateValue(
-    element,
-    start,
-    end,
-    duration,
-    suffix,
-    prefix
-  ) {
+  const nav = document.getElementById("nav");
 
-    const startTime =
-      performance.now();
+  function updateNav() {
 
-    function update(currentTime) {
+    if (!nav) return;
 
-      const elapsed =
-        currentTime - startTime;
+    if (window.scrollY > 30) {
+      nav.classList.add("scrolled");
+    } else {
+      nav.classList.remove("scrolled");
+    }
+
+  }
+
+  updateNav();
+
+  window.addEventListener(
+    "scroll",
+    updateNav,
+    { passive: true }
+  );
+
+
+  /* ========================================================
+     SCROLL REVEAL
+     ======================================================== */
+
+  const revealElements =
+    document.querySelectorAll(".reveal");
+
+  if (!prefersReducedMotion) {
+
+    const revealObserver =
+      new IntersectionObserver(
+        entries => {
+
+          entries.forEach(entry => {
+
+            if (!entry.isIntersecting) return;
+
+            entry.target.classList.add("visible");
+
+            revealObserver.unobserve(
+              entry.target
+            );
+
+          });
+
+        },
+        {
+          threshold: .12,
+          rootMargin: "0px 0px -40px 0px"
+        }
+      );
+
+    revealElements.forEach(element => {
+
+      revealObserver.observe(element);
+
+    });
+
+  } else {
+
+    revealElements.forEach(element => {
+      element.classList.add("visible");
+    });
+
+  }
+
+
+  /* ========================================================
+     PROOF NUMBER COUNTER
+     ======================================================== */
+
+  const statNums =
+    document.querySelectorAll(".proof-num");
+
+  function animateCount(element) {
+
+    const target =
+      parseFloat(element.dataset.target || "0");
+
+    const prefix =
+      element.dataset.prefix || "";
+
+    const suffix =
+      element.dataset.suffix || "";
+
+    const decimals =
+      parseInt(
+        element.dataset.decimals || "0",
+        10
+      );
+
+
+    if (prefersReducedMotion) {
+
+      element.textContent =
+        prefix +
+        target.toFixed(decimals) +
+        suffix;
+
+      return;
+
+    }
+
+
+    const duration = 1400;
+    const startTime = performance.now();
+
+
+    function tick(now) {
 
       const progress =
         Math.min(
-          elapsed / duration,
+          (now - startTime) / duration,
           1
         );
+
 
       const eased =
         1 -
@@ -238,84 +193,438 @@
           3
         );
 
-      const value =
-        Math.round(
-          start +
-          (end - start) *
-          eased
-        );
+
+      const current =
+        target * eased;
+
 
       element.textContent =
-        (prefix || "") +
-        value.toLocaleString() +
-        (suffix || "");
+        prefix +
+        current.toFixed(decimals) +
+        suffix;
+
 
       if (progress < 1) {
-        requestAnimationFrame(update);
+
+        requestAnimationFrame(tick);
+
       }
 
     }
 
-    requestAnimationFrame(update);
+
+    requestAnimationFrame(tick);
+
   }
 
 
-  /* =======================================================
-     HERO STAT OBSERVER
-     ======================================================= */
+  if (statNums.length) {
 
-  const heroStats =
-    document.querySelector(".hero-stats");
-
-
-  if (
-    heroStats &&
-    !prefersReducedMotion &&
-    "IntersectionObserver" in window
-  ) {
-
-    let countUpDone = false;
-
-    const statsObserver =
+    const statObserver =
       new IntersectionObserver(
-        function (entries) {
+        entries => {
 
-          if (
-            entries[0].isIntersecting &&
-            !countUpDone
-          ) {
+          entries.forEach(entry => {
 
-            countUpDone = true;
+            if (!entry.isIntersecting) return;
 
-            const statNumbers =
-              document.querySelectorAll(
-                ".stat-num"
-              );
+            animateCount(entry.target);
 
-            if (statNumbers[0]) {
+            statObserver.unobserve(
+              entry.target
+            );
 
-              animateValue(
-                statNumbers[0],
-                0,
-                4151,
-                1500,
-                "%",
-                "+"
-              );
-
-            }
-
-            statsObserver.disconnect();
-          }
+          });
 
         },
         {
-          threshold: 0.35
+          threshold: .4
         }
       );
 
-    statsObserver.observe(heroStats);
+
+    statNums.forEach(element => {
+
+      statObserver.observe(element);
+
+    });
 
   }
 
-})();
+
+  /* ========================================================
+     PREMIUM 3D TILT
+     ======================================================== */
+
+  const tiltCards =
+    document.querySelectorAll(".tilt-card");
+
+
+  if (
+    !prefersReducedMotion &&
+    window.matchMedia("(pointer: fine)").matches
+  ) {
+
+    tiltCards.forEach(card => {
+
+      let frame = null;
+
+
+      card.addEventListener(
+        "mousemove",
+        event => {
+
+          if (frame) {
+            cancelAnimationFrame(frame);
+          }
+
+
+          frame =
+            requestAnimationFrame(() => {
+
+              const rect =
+                card.getBoundingClientRect();
+
+
+              const x =
+                event.clientX -
+                rect.left;
+
+              const y =
+                event.clientY -
+                rect.top;
+
+
+              const centerX =
+                rect.width / 2;
+
+              const centerY =
+                rect.height / 2;
+
+
+              const rotateX =
+                ((y - centerY) /
+                  centerY) *
+                -4;
+
+
+              const rotateY =
+                ((x - centerX) /
+                  centerX) *
+                5;
+
+
+              card.style.transform =
+                `perspective(1000px)
+                 rotateX(${rotateX}deg)
+                 rotateY(${rotateY}deg)
+                 translateY(-4px)`;
+
+            });
+
+        }
+      );
+
+
+      card.addEventListener(
+        "mouseleave",
+        () => {
+
+          card.style.transform =
+            "perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0)";
+
+        }
+      );
+
+    });
+
+  }
+
+
+  /* ========================================================
+     HERO PARALLAX
+     ======================================================== */
+
+  const heroVisual =
+    document.querySelector(".hero-visual");
+
+
+  if (
+    heroVisual &&
+    !prefersReducedMotion &&
+    window.matchMedia("(pointer: fine)").matches
+  ) {
+
+    let frame = null;
+
+
+    heroVisual.addEventListener(
+      "mousemove",
+      event => {
+
+        if (frame) {
+          cancelAnimationFrame(frame);
+        }
+
+
+        frame =
+          requestAnimationFrame(() => {
+
+            const rect =
+              heroVisual.getBoundingClientRect();
+
+
+            const x =
+              (event.clientX -
+                rect.left) /
+              rect.width -
+              .5;
+
+
+            const y =
+              (event.clientY -
+                rect.top) /
+              rect.height -
+              .5;
+
+
+            const dashboard =
+              heroVisual.querySelector(
+                ".dashboard-card"
+              );
+
+
+            const orb =
+              heroVisual.querySelector(
+                ".orb-main"
+              );
+
+
+            const ring =
+              heroVisual.querySelector(
+                ".ring-one"
+              );
+
+
+            if (dashboard) {
+
+              dashboard.style.transform =
+                `perspective(1200px)
+                 rotateX(${y * -7}deg)
+                 rotateY(${x * 9}deg)
+                 translateZ(15px)`;
+
+            }
+
+
+            if (orb) {
+
+              orb.style.transform =
+                `translate(${x * 20}px, ${y * 20}px)`;
+
+            }
+
+
+            if (ring) {
+
+              ring.style.marginLeft =
+                `${x * 12}px`;
+
+              ring.style.marginTop =
+                `${y * 12}px`;
+
+            }
+
+          });
+
+      }
+    );
+
+
+    heroVisual.addEventListener(
+      "mouseleave",
+      () => {
+
+        const dashboard =
+          heroVisual.querySelector(
+            ".dashboard-card"
+          );
+
+
+        const orb =
+          heroVisual.querySelector(
+            ".orb-main"
+          );
+
+
+        if (dashboard) {
+
+          dashboard.style.transform =
+            "";
+
+        }
+
+
+        if (orb) {
+
+          orb.style.transform =
+            "";
+
+        }
+
+      }
+    );
+
+  }
+
+
+  /* ========================================================
+     MAGNETIC BUTTONS
+     ======================================================== */
+
+  const magneticButtons =
+    document.querySelectorAll(".magnetic");
+
+
+  if (
+    !prefersReducedMotion &&
+    window.matchMedia("(pointer: fine)").matches
+  ) {
+
+    magneticButtons.forEach(button => {
+
+      button.addEventListener(
+        "mousemove",
+        event => {
+
+          const rect =
+            button.getBoundingClientRect();
+
+
+          const x =
+            event.clientX -
+            rect.left -
+            rect.width / 2;
+
+
+          const y =
+            event.clientY -
+            rect.top -
+            rect.height / 2;
+
+
+          button.style.transform =
+            `translate(${x * .08}px, ${y * .08}px)`;
+
+        }
+      );
+
+
+      button.addEventListener(
+        "mouseleave",
+        () => {
+
+          button.style.transform = "";
+
+        }
+      );
+
+    });
+
+  }
+
+
+  /* ========================================================
+     FORM
+     ======================================================== */
+
+  const leadForm =
+    document.getElementById("leadForm");
+
+  const formNote =
+    document.getElementById("formNote");
+
+
+  if (leadForm) {
+
+    leadForm.addEventListener(
+      "submit",
+      event => {
+
+        event.preventDefault();
+
+
+        const name =
+          document
+            .getElementById("name")
+            .value
+            .trim();
+
+
+        const brokerage =
+          document
+            .getElementById("brokerage")
+            .value
+            .trim();
+
+
+        const email =
+          document
+            .getElementById("email")
+            .value
+            .trim();
+
+
+        const emailPattern =
+          /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+
+        if (
+          !name ||
+          !brokerage ||
+          !emailPattern.test(email)
+        ) {
+
+          formNote.textContent =
+            "Please fill in your name, brokerage, and a valid email.";
+
+          formNote.style.color =
+            "#D6472B";
+
+          return;
+
+        }
+
+
+        /*
+          IMPORTANT:
+
+          This is still FRONT-END ONLY.
+
+          Before launching the website,
+          connect this form to your CRM,
+          email service, webhook or backend.
+
+          Example:
+          fetch("/api/leads", {
+            method: "POST",
+            body: new FormData(leadForm)
+          });
+        */
+
+
+        formNote.textContent =
+          "Thanks — we'll be in touch within one business day.";
+
+        formNote.style.color =
+          "#178A48";
+
+
+        leadForm.reset();
+
+      }
+    );
+
+  }
+
+});
